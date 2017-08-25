@@ -1,11 +1,22 @@
 #
 # Defines environment variables.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+## Golang stuff
+export GOPATH=$HOME
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+## Set CDPATH
+cdpath=( . $GOPATH/src/github.com $GOPATH/src/github.com/ivarg $GOPATH/src/github.com/TV4 $GOPATH/src )
+export CDPATH
+
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" 
+
+# Specify your Homebrew cask defaults in this environment variable
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
