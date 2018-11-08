@@ -19,4 +19,4 @@ export CDPATH
 export PATH="$PATH:$HOME/.rvm/bin" 
 
 # Specify your Homebrew cask defaults in this environment variable
-export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
